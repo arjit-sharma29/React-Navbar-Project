@@ -1,0 +1,101 @@
+.NavbarItem {
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.navbar-logo {
+  color: white;
+  cursor: pointer;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.navbar-icon {
+  cursor: pointer;
+  color: white;
+  display: none;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 20px;
+  list-style: none;
+  text-align: center;
+  justify-content: end;
+  margin-right: 2rem;
+  width: 70vw;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 17px;
+}
+
+.nav-links:hover {
+  background-color: rgb(80, 164, 248);
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItem {
+    position: relative;
+  }
+  
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    height: 375px;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    background-color: dodgerblue;
+    opacity: 1;
+    transition: all 0.5s ease;
+    text-align: center;
+  }
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background-color: rgb(7, 127, 247);
+    z-index: 1;
+  }
+  .nav-links {
+    padding: 1.7rem;
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links:hover {
+    background-color: rgb(80, 164, 248);
+    border-radius: 0px;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .navbar-icon {
+    margin-right: 25px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, 50%);
+  }
+}
